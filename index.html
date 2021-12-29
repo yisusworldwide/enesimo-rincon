@@ -26,12 +26,14 @@
                       </button>
                     </header>
                     <div class="card-content">
-                      <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                        <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-                        <br>
-                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                      </div>
+                      <div class="wrapper text-center">
+                        <textarea id="txt" rows="3" placeholder="Escribe aquí..."></textarea>
+                        <div class="text-l">
+                            <button onclick="getRs()">Percibir</button>
+                        </div>
+                    </div>
+                    <div id="rs" class="wrapper"></div>
+                    <script src="./script.js"></script>
                     </div>
                     <footer class="card-footer">
                       <a href="#" class="card-footer-item">Percibir</a>
@@ -45,14 +47,7 @@
     <header class="text-center">
         <h2>El Enésimo Rincón</h2>
     </header>
-    <div class="wrapper text-center">
-        <textarea id="txt" rows="3" placeholder="Escribe aquí..."></textarea>
-        <div class="text-l">
-            <button onclick="getRs()">Percibir</button>
-        </div>
-    </div>
-    <div id="rs" class="wrapper"></div>
-    <script src="./script.js"></script>
+    
 </body>
 
 </html>
