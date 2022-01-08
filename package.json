@@ -1,0 +1,28 @@
+{
+  "name": "enesimo-rincon",
+  "version": "1.0.0",
+  "description": "Web thoughts-board project based on HTML, CSS and JS.",
+  "main": "script.js",
+  "dependencies": {
+    "express": "^4.17.2",
+    "fs": "0.0.1-security",
+    "node-static": "^0.7.11",
+    "server": "^1.0.37",
+    "sqlite": "^4.0.23",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yisusworldwide/enesimo-rincon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yisusworldwide/enesimo-rincon/issues"
+  },
+  "homepage": "https://github.com/yisusworldwide/enesimo-rincon#readme"
+}
