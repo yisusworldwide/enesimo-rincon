@@ -7,13 +7,16 @@
     "express": "^4.17.2",
     "fs": "0.0.1-security",
     "node-static": "^0.7.11",
+    "open": "^8.4.0",
     "server": "^1.0.37",
     "sqlite": "^4.0.23",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^5.0.2",
+    "tz": "^0.1.1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",

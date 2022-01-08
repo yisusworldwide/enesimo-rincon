@@ -5,10 +5,9 @@ var path = require('path');
 var fs = require('fs');
 const sqlite3 = require('sqlite3');
 const sqlite = require('sqlite');
-
-
-//app.use(express.static(__dirname)); // Current directory is root
-app.use(express.static(path.join(__dirname, 'public'))); //  "public" off of current is root
+const open = require('open');
+app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
 
 async function getDBConnection(){
     const db = await sqlite.open({
@@ -24,8 +23,6 @@ app.get('/perceptions', async function(req, res){
     await db.close();
     return res.json(perceptions)
 })
-
-app.use(express.json());
 
 app.post("/perceptions", async function(req, res) {
     let db = await getDBConnection();
@@ -50,8 +47,31 @@ app.post("/perceptions", async function(req, res) {
     res.send(req.body);    // echo the result back
 })
 
+app.delete("/perceptions/:id", async function(req, res) {
+    let db = await getDBConnection();
+    var errors=[]
+    console.log(req.body)
+    var data = {
+        text: req.body
+    }
+    var sql ='DELETE FROM perceptions WHERE id = ?'
+    var params =[req.params.id]
+    db.run(sql, params, function (err, result) {
+        if (err){
+            res.status(400).json({"error": err.message})
+            return;
+        }
+        res.json({
+            "message": "success",
+            "data": data,
+            "id" : this.lastID
+        })
+    });
+    res.send(req.body);    // echo the result back
+})
 
 var port = 3000;
 app.listen(port, function(){
     console.log('server on! http://localhost:' + port);
+    open('http://localhost:' + port);
 });
