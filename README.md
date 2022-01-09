@@ -1,2 +1,28 @@
 # enesimo-rincon
- Web thoughts-board project based on HTML, CSS, Json and JS.  
+
+Web thoughts-board project to save your perceptions for the future.
+
+## Get started
+
+Make sure you have all the dependencies from package.json installed by running the following command:
+
+`npm install`
+
+To start the project you need to install NodeJS, go to the project's folder and run the following command:
+
+`node app.js`
+
+## Technical infomation
+
+This project is based in a client-server app. 
+
+### Backend
+The backend is written in NodeJS and it's formed by an API with the endpoints included in [this postman file](postman).
+
+Also, there is SQLite3 database which includes the required tables to store the perceptions.
+
+### Frontend
+The frontend is written in HTML, CSS and Javascript with Bulma.io framework. 
+
+
+ 
