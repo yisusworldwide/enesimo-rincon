@@ -5,6 +5,21 @@ h1 {
     padding: 0;
 }
 
+.bg-img { 
+    background-image: url("https://www.saccosystem.com/public/imgCat3/big/140-525402379-Pollame.jpg") ;
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    background-color: #999;
+}
+
+.img-responsive {
+    display: block; 
+    max-width: 100%;
+    height: auto;
+ } 
+
 h2 {
     text-align: center;
     margin: 0;
