@@ -1,8 +1,9 @@
 body,
 h3,
 h1 {
-    margin: 0;
-    padding: 0;
+    text-align: center;
+    margin: 0px, 0px, 0px;
+    padding: 1;
 }
 
 .bg-img { 
