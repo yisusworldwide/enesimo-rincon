@@ -16,6 +16,11 @@ function removeData(id){
     setTimeout(displayPerceptions, 1000);
 }
 
+function updateData(id){
+    removePerception(id);
+    setTimeout(displayPerceptions, 1000);
+}
+
 Date.prototype.addHours = function(h) {
     this.setTime(this.getTime() + (h*60*60*1000));
     return this;
@@ -57,6 +62,12 @@ function addPerception(text) {
 }
 
 function removePerception(id) {
+    let res = axios.delete('http://localhost:3000/perceptions/' + id);
+    let data = res.data;
+    console.log(data);
+}
+
+function updatePerception(id) {
     let res = axios.delete('http://localhost:3000/perceptions/' + id);
     let data = res.data;
     console.log(data);
