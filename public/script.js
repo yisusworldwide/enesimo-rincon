@@ -56,7 +56,6 @@ function addPerception(text) {
     let payload = { text: text };
     console.log('script ' + payload.text)
     let res = axios.post('http://localhost:3000/perceptions', payload);
-
     let data = res.data;
     console.log(data);
 }
