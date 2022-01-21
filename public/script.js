@@ -17,7 +17,7 @@ function removeData(id){
 }
 
 function updateData(id){
-    removePerception(id);
+    updatePerception(id);
     setTimeout(displayPerceptions, 1000);
 }
 
@@ -67,7 +67,7 @@ function removePerception(id) {
 }
 
 function updatePerception(id) {
-    let res = axios.delete('http://localhost:3000/perceptions/' + id);
+    let res = axios.update('http://localhost:3000/perceptions/' + id);
     let data = res.data;
     console.log(data);
 }
