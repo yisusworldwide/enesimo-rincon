@@ -72,14 +72,3 @@ function updatePerception(id) {
     console.log(data);
 }
 
-function updateNodeInTree(node, nodeId, newNode) {
-    if (node.nodeId == nodeId) {
-        node.nodeName = newNode.nodeName;
-    } else if (node.children != null) {
-        for (let i = 0; i < node.children.length; i++) {
-            result = updateNodeInTree(node.children[i], nodeId, newNode);
-        }
-    }
-}
-
-//Here I add a new property called nodeName.
