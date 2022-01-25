@@ -67,7 +67,7 @@ function removePerception(id) {
 }
 
 function updatePerception(id) {
-    let res = axios.update('http://localhost:3000/perceptions/' + id);
+    let res = axios.put('http://localhost:3000/perceptions/' + id);
     let data = res.data;
     console.log(data);
 }
