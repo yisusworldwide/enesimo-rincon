@@ -41,7 +41,7 @@ function displayPerceptions() {
             <div class="message-header">
                 <p style='color:white;'>Percepción #${id}</p>
                 <button class="delete" aria-label="delete" onclick="removeData(${id})"></button>
-                <button class="edit" aria-label="edit" onclick="updateData(${id})"></button>
+                <button class="update" aria-label="update" onclick="updateData(${id})"></button>
             </div>
             <div class="message-body">
             <div>${txt}</div>
@@ -67,8 +67,10 @@ function removePerception(id) {
     console.log(data);
 }
 
-function updatePerception(id) {
-    let res = axios.put('http://localhost:3000/perceptions/' + id);
+function updatePerception(text) {
+    let payload = { text: text };
+    console.log('script ' + payload.text)
+    let res = axios.put('http://localhost:3000/perceptions/', payload);
     let data = res.data;
     console.log(data);
 }
