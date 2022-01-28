@@ -70,28 +70,28 @@ app.delete("/perceptions/:id", async function(req, res) {
     res.send(req.body);    // echo the result back
 })
 
-app.update("/perceptions/:id", async function(req, res) {
-    let db = await getDBConnection();
-    var errors=[]
-    console.log(req.body)
-    var data = {
-        text: req.body
-    }
-    var sql ='UPDATE FROM perceptions WHERE id = ?'
-    var params =[req.params.id]
-    db.run(sql, params, function (err, result) {
-        if (err){
-            res.status(400).json({"error": err.message})
-            return;
-        }
-        res.json({
-            "message": "success",
-            "data": data,
-            "id" : this.lastID
-        })
-    });
-    res.send(req.body);    // echo the result back
-})
+// app.update("/perceptions/:id", async function(req, res) {
+//     let db = await getDBConnection();
+//     var errors=[]
+//     console.log(req.body)
+//     var data = {
+//         text: req.body
+//     }
+//     var sql ='UPDATE FROM perceptions WHERE id = ?'
+//     var params =[req.params.id]
+//     db.run(sql, params, function (err, result) {
+//         if (err){
+//             res.status(400).json({"error": err.message})
+//             return;
+//         }
+//         res.json({
+//             "message": "success",
+//             "data": data,
+//             "id" : this.lastID
+//         })
+//     });
+//     res.send(req.body);    // echo the result back
+// })
 
 var port = 3000;
 app.listen(port, function(){
