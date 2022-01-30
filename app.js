@@ -47,15 +47,15 @@ app.post("/perceptions", async function(req, res) {
     res.send(req.body);    // echo the result back
 })
 
-app.delete("/perceptions/:id", async function(req, res) {
+app.put("/perceptions/:id", async function(req, res) {
     let db = await getDBConnection();
     var errors=[]
     console.log(req.body)
     var data = {
         text: req.body
     }
-    var sql ='DELETE FROM perceptions WHERE id = ?'
-    var params =[req.params.id]
+    var sql ='UPDATE FROM perceptions WHERE id = ?'
+    var params =[data.text.text]
     db.run(sql, params, function (err, result) {
         if (err){
             res.status(400).json({"error": err.message})
@@ -70,14 +70,14 @@ app.delete("/perceptions/:id", async function(req, res) {
     res.send(req.body);    // echo the result back
 })
 
-app.put("/perceptions/:id", async function(req, res) {
+app.delete("/perceptions/:id", async function(req, res) {
     let db = await getDBConnection();
     var errors=[]
     console.log(req.body)
     var data = {
         text: req.body
     }
-    var sql ='UPDATE FROM perceptions WHERE id = ?'
+    var sql ='DELETE FROM perceptions WHERE id = ?'
     var params =[req.params.id]
     db.run(sql, params, function (err, result) {
         if (err){
