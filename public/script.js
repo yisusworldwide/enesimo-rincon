@@ -16,9 +16,9 @@ function removeData(id){
     setTimeout(displayPerceptions, 1000);
 }
 
-function updateData(id){
+function updateData(variable){
     var s = document.getElementById(variable);
-    updatePerception(id);
+    updatePerception(s.value);
     setTimeout(displayPerceptions, 1000);
     s.value = ''
 }
