@@ -17,8 +17,10 @@ function removeData(id){
 }
 
 function updateData(id){
+    var s = document.getElementById(variable);
     updatePerception(id);
     setTimeout(displayPerceptions, 1000);
+    s.value = ''
 }
 
 Date.prototype.addHours = function(h) {
