@@ -16,12 +16,14 @@ function removeData(id){
     setTimeout(displayPerceptions, 1000);
 }
 
-function updateData(variable){
-    var s = document.getElementById(variable);
-    updatePerception(s.value);
-    setTimeout(displayPerceptions, 1000);
-    s.value = ''
-}
+$(function() { // this runs when the dom is ready.
+    function updateData(variable){
+        var s = document.getElementById(variable);
+        updatePerception(s.value);
+        setTimeout(displayPerceptions, 1000);
+        s.value = ''
+    }
+}); // end of jQuery DOM Ready function
 
 Date.prototype.addHours = function(h) {
     this.setTime(this.getTime() + (h*60*60*1000));
