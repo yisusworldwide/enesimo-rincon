@@ -1,3 +1,5 @@
+function initPage() {
+
 displayPerceptions();
 
 function _(id) {
@@ -16,14 +18,12 @@ function removeData(id){
     setTimeout(displayPerceptions, 1000);
 }
 
-$(function() { // this runs when the dom is ready.
-    function updateData(variable){
-        var s = document.getElementById(variable);
-        updatePerception(s.value);
-        setTimeout(displayPerceptions, 1000);
-        s.value = ''
-    }
-}); // end of jQuery DOM Ready function
+function updateData(variable){
+    var s = document.getElementById(variable);
+    updatePerception(s.value);
+    setTimeout(displayPerceptions, 1000);
+    s.value = ''
+}
 
 Date.prototype.addHours = function(h) {
     this.setTime(this.getTime() + (h*60*60*1000));
@@ -71,6 +71,7 @@ function removePerception(id) {
     console.log(data);
 }
 
+
 function updatePerception(text) {
     let payload = { text: text };
     console.log('script ' + payload.text)
@@ -78,4 +79,6 @@ function updatePerception(text) {
     let data = res.data;
     console.log(data);
 }
+window.addEventListener("load", initPage, false);
 
+}
