@@ -1,5 +1,3 @@
-function initPage() {
-
 displayPerceptions();
 
 function _(id) {
@@ -79,6 +77,6 @@ function updatePerception(text) {
     let data = res.data;
     console.log(data);
 }
-window.addEventListener("load", initPage, false);
 
-}
+function initPage() {}
+window.addEventListener("load", initPage, false);
