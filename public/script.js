@@ -2,6 +2,7 @@ displayPerceptions();
 
 function _(id) {
     return document.getElementById(id);
+    this.init();
 }
 
 function postData(variable){
@@ -9,11 +10,13 @@ function postData(variable){
     addPerception(s.value);
     setTimeout(displayPerceptions, 1000);
     s.value = ''
+    this.init();
 }
 
 function removeData(id){
     removePerception(id);
     setTimeout(displayPerceptions, 1000);
+    this.init();
 }
 
 function updateData(variable){
@@ -78,5 +81,5 @@ function updatePerception(text) {
     console.log(data);
 }
 
-function initPage() {}
-window.addEventListener("load", initPage, false);
+// function initPage() {}
+// window.addEventListener("load", initPage, false);
