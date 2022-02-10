@@ -1,4 +1,5 @@
-window.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', (event) => {
+// window.addEventListener("DOMContentLoaded", function() {
     
         displayPerceptions();
 
@@ -80,8 +81,8 @@ window.addEventListener("DOMContentLoaded", function() {
             console.log(data);
         }
         
-    }, false);
-
+    });    
+    // }, false);
 
 
 // function initPage() {}
