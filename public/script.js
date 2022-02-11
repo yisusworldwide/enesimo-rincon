@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-// window.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', () => {
     
         displayPerceptions();
+    });  
 
         function _(id) {
             return document.getElementById(id);
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             console.log(data);
         }
         
-    });    
+     
     // }, false);
 
 
