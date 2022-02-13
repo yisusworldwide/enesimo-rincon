@@ -1,36 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
     
         displayPerceptions();
-    });  
 
         function _(id) {
             return document.getElementById(id);
         }
-        
-        function postData(variable){
-            var s = document.getElementById(variable);
-            addPerception(s.value);
-            setTimeout(displayPerceptions, 1000);
-            s.value = ''
-        }
-        
-        function removeData(id){
-            removePerception(id);
-            setTimeout(displayPerceptions, 1000);
-        }
-        
-        function updateData(variable){
-            var s = document.getElementById(variable);
-            updatePerception(s.value);
-            setTimeout(displayPerceptions, 1000);
-            s.value = ''
-        }
-        
-        Date.prototype.addHours = function(h) {
-            this.setTime(this.getTime() + (h*60*60*1000));
-            return this;
-        }
-        
+
         function displayPerceptions() {
             axios.get('http://localhost:3000/perceptions').then((res) => {
                 var rows = res.data
@@ -57,6 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
         }
+
+        Date.prototype.addHours = function(h) {
+            this.setTime(this.getTime() + (h*60*60*1000));
+            return this;
+        }
         
         function addPerception(text) {
             let payload = { text: text };
@@ -72,18 +52,35 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(data);
         }
         
-        
         function updatePerception(text) {
             let payload = { text: text };
             console.log('script ' + payload.text)
             let res = axios.put('http://localhost:3000/perceptions/', payload);
             let data = res.data;
             console.log(data);
+        }  
+
+        //LINKED-TREE FUNCTIONS TO ABOVE ONES
+
+        function postData(variable){
+            var s = document.getElementById(variable);
+            addPerception(s.value);
+            setTimeout(displayPerceptions, 1000);
+            s.value = ''
         }
         
-     
-    // }, false);
-
+        function removeData(id){
+            removePerception(id);
+            setTimeout(displayPerceptions, 1000);
+        }
+        
+        function updateData(variable){
+            var s = document.getElementById(variable);
+            updatePerception(s.value);
+            setTimeout(displayPerceptions, 1000);
+            s.value = ''
+        }
+        
+    // }, false); 
 
 // function initPage() {}
-// window.addEventListener("load", initPage, false);
