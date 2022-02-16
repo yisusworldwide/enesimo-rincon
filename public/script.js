@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
 
     displayPerceptions();
 
@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return this;
     }
 
-}); 
+// }); 
 
-window.addEventListener('load', function(){
+// window.addEventListener('load', function(){
 
     function postData(variable){
         var s = document.getElementById(variable);
@@ -85,7 +85,7 @@ window.addEventListener('load', function(){
         console.log(data);
     }  
 
-});
+// });
 
 
 // }, false);
