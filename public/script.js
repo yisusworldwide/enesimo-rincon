@@ -1,53 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    function addPerception(text) {
-        let payload = { text: text };
-        console.log('script ' + payload.text)
-        let res = axios.post('http://localhost:3000/perceptions', payload);
-        let data = res.data;
-        console.log(data);
-    }
-    
-    function removePerception(id) {
-        let res = axios.delete('http://localhost:3000/perceptions/' + id);
-        let data = res.data;
-        console.log(data);
-    }
-    
-    function updatePerception(text) {
-        let payload = { text: text };
-        console.log('script ' + payload.text)
-        let res = axios.put('http://localhost:3000/perceptions/', payload);
-        let data = res.data;
-        console.log(data);
-    }  
-
-    //LINKED-TREE FUNCTIONS TO ABOVE ONES
-
-
-    function postData(variable){
-        var s = document.getElementById(variable);
-        addPerception(s.value);
-        setTimeout(displayPerceptions, 1000);
-        s.value = ''
-    }
-    
-    function removeData(id){
-        removePerception(id);
-        setTimeout(displayPerceptions, 1000);
-    }
-    
-    function updateData(variable){
-        var s = document.getElementById(variable);
-        updatePerception(s.value);
-        setTimeout(displayPerceptions, 1000);
-        s.value = ''
-    }
-              
-}); 
-
-window.addEventListener('load', function(){
-
     displayPerceptions();
 
     function _(id) {
@@ -86,7 +38,55 @@ window.addEventListener('load', function(){
         return this;
     }
 
+}); 
+
+window.addEventListener('load', function(){
+
+    function postData(variable){
+        var s = document.getElementById(variable);
+        addPerception(s.value);
+        setTimeout(displayPerceptions, 1000);
+        s.value = ''
+    }
+    
+    function removeData(id){
+        removePerception(id);
+        setTimeout(displayPerceptions, 1000);
+    }
+
+    function updateData(variable){
+        var s = document.getElementById(variable);
+        updatePerception(s.value);
+        setTimeout(displayPerceptions, 1000);
+        s.value = ''
+    }
+
+    //LINKED-TREE FUNCTIONS TO ABOVE ONES
+
+    function addPerception(text) {
+        let payload = { text: text };
+        console.log('script ' + payload.text)
+        let res = axios.post('http://localhost:3000/perceptions', payload);
+        let data = res.data;
+        console.log(data);
+    }
+    
+    function removePerception(id) {
+        let res = axios.delete('http://localhost:3000/perceptions/' + id);
+        let data = res.data;
+        console.log(data);
+    }
+    
+    function updatePerception(text) {
+        let payload = { text: text };
+        console.log('script ' + payload.text)
+        let res = axios.put('http://localhost:3000/perceptions/', payload);
+        let data = res.data;
+        console.log(data);
+    }  
+
 });
+
 
 // }, false);
 // function initPage() {}
