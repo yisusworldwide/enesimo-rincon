@@ -54,7 +54,7 @@ app.put("/perceptions/:id", async function(req, res) {
     var data = {
         text: req.body
     }
-    var sql ='UPDATE FROM perceptions WHERE id = ?'
+    var sql ='UPDATE FROM perceptions WHERE id = txt'
     var params =[data.text.text]
     db.run(sql, params, function (err, result) {
         if (err){
