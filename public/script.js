@@ -61,8 +61,6 @@
         s.value = ''
     }
 
-    //LINKED-TREE FUNCTIONS TO ABOVE ONES
-
     function addPerception(text) {
         let payload = { text: text };
         console.log('script ' + payload.text)

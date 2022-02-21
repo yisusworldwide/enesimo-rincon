@@ -17,6 +17,7 @@ async function getDBConnection(){
     return db;
 }
 
+//GET API
 app.get('/perceptions', async function(req, res){
     let db = await getDBConnection();
     let perceptions = await db.all("select id, text, created_at, updated_at from perceptions order by created_at desc");
@@ -24,6 +25,7 @@ app.get('/perceptions', async function(req, res){
     return res.json(perceptions)
 })
 
+//POST API
 app.post("/perceptions", async function(req, res) {
     let db = await getDBConnection();
     var errors=[]
@@ -33,7 +35,7 @@ app.post("/perceptions", async function(req, res) {
     }
     var sql ='INSERT or IGNORE INTO perceptions (text) VALUES (?)'
     var params =[data.text.text]
-    db.run(sql, params, function (err, result) {
+    db.run(sql, params, function (err, results) {
         if (err){
             res.status(400).json({"error": err.message})
             return;
@@ -44,19 +46,20 @@ app.post("/perceptions", async function(req, res) {
             "id" : this.lastID
         })
     });
-    res.send(req.body);    // echo the result back
+    res.end(req.body);    // echo the result back
 })
 
+//PUT API
 app.put("/perceptions/:id", async function(req, res) {
     let db = await getDBConnection();
     var errors=[]
     console.log(req.body)
     var data = {
-        text: req.body
+        text: req.body.s.value
     }
-    var sql ='UPDATE ROM perceptions WHERE id = > 1'
+    var sql ='UPDATE FROM perceptions WHERE id = ?'
     var params =[data.text.text]
-    db.run(sql, params, function (err, result) {
+    db.run(sql, params, function (err, results) {
         if (err){
             res.status(400).json({"error": err.message})
             return;
@@ -67,9 +70,10 @@ app.put("/perceptions/:id", async function(req, res) {
             "id" : this.lastID
         })
     });
-    res.send(req.body);    // echo the result back
+    res.end(req.body);    // echo the result back
 })
 
+//DELETE API
 app.delete("/perceptions/:id", async function(req, res) {
     let db = await getDBConnection();
     var errors=[]
@@ -79,7 +83,7 @@ app.delete("/perceptions/:id", async function(req, res) {
     }
     var sql ='DELETE FROM perceptions WHERE id = ?'
     var params =[req.params.id]
-    db.run(sql, params, function (err, result) {
+    db.run(sql, params, function (err, results) {
         if (err){
             res.status(400).json({"error": err.message})
             return;
@@ -90,7 +94,7 @@ app.delete("/perceptions/:id", async function(req, res) {
             "id" : this.lastID
         })
     });
-    res.send(req.body);    // echo the result back
+    res.end(req.body);    // echo the result back
 })
 
 var port = 3000;
