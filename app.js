@@ -50,15 +50,15 @@ app.post("/perceptions", async function(req, res) {
 })
 
 //PUT API
-app.put("/perceptions/:id", async function(req, res) {
+app.put("/perceptions", async function(req, res) {
     let db = await getDBConnection();
     var errors=[]
     console.log(req.body)
     var data = {
-        text: req.body.s.value
+        text: req.body
     }
     var sql ='UPDATE FROM perceptions WHERE id = ?'
-    var params =[data.text.text]
+    var params =[req.params.id]
     db.run(sql, params, function (err, results) {
         if (err){
             res.status(400).json({"error": err.message})
