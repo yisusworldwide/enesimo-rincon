@@ -56,7 +56,7 @@
 
     function updateData(variable){
         var s = document.getElementById(variable);
-        updatePerception(s.value);
+        updatePerception(s);
         setTimeout(displayPerceptions, 1000);
         s.value = ''
     }
@@ -75,10 +75,10 @@
         console.log(data);
     }
     
-    function updatePerception(text) {
+    function updatePerception(id) {
         let payload = { text: text };
         console.log('script ' + payload.text)
-        let res = axios.put('http://localhost:3000/perceptions/', payload);
+        let res = axios.put('http://localhost:3000/perceptions/' + id);
         let data = res.data;
         console.log(data);
     }  
