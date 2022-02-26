@@ -42,8 +42,8 @@
 
 // window.addEventListener('load', function(){
 
-    function postData(variable){
-        var s = document.getElementById(variable);
+    function postData(id){
+        var s = document.getElementById(id);
         addPerception(s.value);
         setTimeout(displayPerceptions, 1000);
         s.value = ''
@@ -54,9 +54,9 @@
         setTimeout(displayPerceptions, 1000);
     }
 
-    function updateData(variable){
-        var s = document.getElementById(variable);
-        updatePerception(s);
+    function updateData(id){
+        var s = document.getElementById(id);
+        updatePerception(s.value);
         setTimeout(displayPerceptions, 1000);
         s.value = ''
     }
@@ -76,8 +76,8 @@
     }
     
     function updatePerception(id) {
-        let payload = { text: text };
-        console.log('script ' + payload.text)
+        // let payload = { text: text };
+        // console.log('script ' + payload.text)
         let res = axios.put('http://localhost:3000/perceptions/' + id);
         let data = res.data;
         console.log(data);
