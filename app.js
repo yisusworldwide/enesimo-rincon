@@ -46,10 +46,13 @@ app.post("/perceptions", async function(req, res) {
             "id" : this.lastID
         })
     });
-    res.end(req.body);    // echo the result back
+    res.send(req.body);    // echo the result back
 })
 
 //PUT API
+//For our API, we're going to configure PUT to be able to handle single-user editing, 
+//so we're going to use the :id route parameter this time.
+
 app.put("/perceptions/:id", async function(req, res) {
     let db = await getDBConnection();
     var errors=[]
@@ -57,9 +60,9 @@ app.put("/perceptions/:id", async function(req, res) {
     var data = {
         text: req.body
     }
-    var sql ='UPDATE FROM perceptions WHERE id = ?'
-    var params =[data.text.text]
     var params =[req.params.id]
+    var sql ='UPDATE perceptions SET ? WHERE id = ?'
+    var params =[data.text.text]
     db.run(sql, params, function (err, results) {
         if (err){
             res.status(400).json({"error": err.message})
@@ -71,7 +74,7 @@ app.put("/perceptions/:id", async function(req, res) {
             "id" : this.lastID
         })
     });
-    res.end(req.body);    // echo the result back
+    res.send(req.body);    // echo the result back
 })
 
 //DELETE API
@@ -95,7 +98,7 @@ app.delete("/perceptions/:id", async function(req, res) {
             "id" : this.lastID
         })
     });
-    res.end(req.body);    // echo the result back
+    res.send(req.body);    // echo the result back
 })
 
 var port = 3000;
