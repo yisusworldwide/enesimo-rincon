@@ -49,6 +49,14 @@ app.post("/perceptions", async function(req, res) {
     res.send(req.body);    // echo the result back
 })
 
+// app.post('/users', (request, response) => {
+//     pool.query('INSERT INTO users SET ?', request.body, (error, result) => {
+//         if (error) throw error;
+ 
+//         response.status(201).send(`User added with ID: ${result.insertId}`);
+//     });
+// });
+
 //PUT API
 //For our API, we're going to configure PUT to be able to handle single-user editing, 
 //so we're going to use the :id route parameter this time.
@@ -58,11 +66,11 @@ app.put("/perceptions/:id", async function(req, res) {
     var errors=[]
     console.log(req.body)
     var data = {
-        text: req.body
+        text: req.body.id
     }
     var params =[req.params.id]
     var sql ='UPDATE perceptions SET ? WHERE id = ?'
-    var params =[data.text.text]
+    // var params =[data.text.text]
     db.run(sql, params, function (err, results) {
         if (err){
             res.status(400).json({"error": err.message})
@@ -76,6 +84,16 @@ app.put("/perceptions/:id", async function(req, res) {
     });
     res.send(req.body);    // echo the result back
 })
+
+// app.put('/users/:id', (request, response) => {
+//     const id = request.params.id;
+ 
+//     pool.query('UPDATE users SET ? WHERE id = ?', [request.body, id], (error, result) => {
+//         if (error) throw error;
+ 
+//         response.send('User updated successfully.');
+//     });
+// });
 
 //DELETE API
 app.delete("/perceptions/:id", async function(req, res) {
@@ -100,6 +118,16 @@ app.delete("/perceptions/:id", async function(req, res) {
     });
     res.send(req.body);    // echo the result back
 })
+
+// app.delete('/users/:id', (request, response) => {
+//     const id = request.params.id;
+ 
+//     pool.query('DELETE FROM users WHERE id = ?', id, (error, result) => {
+//         if (error) throw error;
+ 
+//         response.send('User deleted.');
+//     });
+// });
 
 var port = 3000;
 app.listen(port, function(){
