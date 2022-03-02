@@ -62,14 +62,11 @@ app.post("/perceptions", async function(req, res) {
 //so we're going to use the :id route parameter this time.
 
 app.put("/perceptions/:id", async function(req, res) {
-    try{
     let db = await getDBConnection();
     var errors=[]
     console.log(req.body)
     var data = {
-        text: req.body.id
-    }, catch (e){
-        console.log ("ERROR CAUGHT!")
+        text: req.body
     }
     var params =[req.params.id]
     var sql ='UPDATE perceptions SET ? WHERE id = ?'

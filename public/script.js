@@ -20,8 +20,8 @@
                 <article class="message">
                 <div class="message-header">
                     <p style='color:white;'>Percepción #${id}</p>
-                    <button class="delete" aria-label="delete" onclick="removeData(${id})"></button>
                     <button class="update" aria-label="update" onclick="updateData(${id})"></button>
+                    <button class="delete" aria-label="delete" onclick="removeData(${id})"></button>
                 </div>
                 <div class="message-body">
                 <div>${txt}</div>
