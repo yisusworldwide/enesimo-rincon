@@ -42,25 +42,6 @@
 
 // window.addEventListener('load', function(){
 
-    function postData(id){
-        var s = document.getElementById(id);
-        addPerception(s.value);
-        setTimeout(displayPerceptions, 1000);
-        s.value = ''
-    }
-    
-    function removeData(id){
-        removePerception(id);
-        setTimeout(displayPerceptions, 1000);
-    }
-
-    function updateData(id){
-        var s = document.getElementById(id);
-        updatePerception(s.value);
-        setTimeout(displayPerceptions, 1000);
-        s.value = ''
-    }
-
     function addPerception(text) {
         let payload = { text: text };
         console.log('script ' + payload.text)
@@ -75,13 +56,37 @@
         console.log(data);
     }
     
-    function updatePerception(id) {
-        // let payload = { text: text };
-        // console.log('script ' + payload.text)
-        let res = axios.put('http://localhost:3000/perceptions/' + id);
+    function updatePerception(text) {
+        let payload = { text: text };
+        console.log('script ' + payload.text)
+        let res = axios.put('http://localhost:3000/perceptions/' + payload);
         let data = res.data;
         console.log(data);
     }  
+
+    function postData(id){
+        var s = document.getElementById(id);
+        addPerception(s.value);
+        setTimeout(displayPerceptions, 1000);
+        s.value = ''
+    }
+    
+    function removeData(id){
+        removePerception(id);
+        setTimeout(displayPerceptions, 1000);
+    }
+
+    // function updateData(id){
+    //     var s = document.getElementById(id);
+    //     updatePerception(s.value);
+    //     setTimeout(displayPerceptions, 1000);
+    //     s.value = ''
+    // }
+
+    function updateData(id){
+        updatePerception(id);
+        setTimeout(displayPerceptions, 1000);
+    }
 
 // });
 
