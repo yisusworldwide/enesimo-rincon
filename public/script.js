@@ -76,17 +76,20 @@
         setTimeout(displayPerceptions, 1000);
     }
 
-    // function updateData(id){
-    //     var s = document.getElementById(id);
-    //     updatePerception(s.value);
-    //     setTimeout(displayPerceptions, 1000);
-    //     s.value = ''
-    // }
-
     function updateData(id){
-        updatePerception(id);
+        var s = document.getElementById(id);
+        if (document.getElementById(id) != null) {
+        str = document.getElementById(id).value;
+        }
+        updatePerception(s.value);
         setTimeout(displayPerceptions, 1000);
+        s.value = ''
     }
+
+    // function updateData(id){
+    //     updatePerception(id);
+    //     setTimeout(displayPerceptions, 1000);
+    // }
 
 // });
 
