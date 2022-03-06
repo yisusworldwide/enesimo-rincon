@@ -65,7 +65,7 @@
     }  
 
     function postData(id){
-        var s = document.getElementById(id);
+        let s = document.getElementById(id);
         addPerception(s.value);
         setTimeout(displayPerceptions, 1000);
         s.value = ''
@@ -77,10 +77,10 @@
     }
 
     function updateData(id){
-        var s = document.getElementById(id);
-        if (document.getElementById(id) != null) {
-        str = document.getElementById(id).value;
-        }
+        let s = document.getElementById(id).innerHTML;
+        // if (document.getElementById(id) != null) {
+        // str = document.getElementById(id).value;
+        // }
         updatePerception(s.value);
         setTimeout(displayPerceptions, 1000);
         s.value = ''
