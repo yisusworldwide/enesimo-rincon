@@ -76,14 +76,17 @@
         setTimeout(displayPerceptions, 1000);
     }
 
-    function updateData(id){
-        let s = document.getElementById(id).innerHTML;
+    function updateData(txt){
+        let s = document.getElementById(txt);
+        // let s = document.getElementById(id).textContent;
         // if (document.getElementById(id) != null) {
         // str = document.getElementById(id).value;
         // }
-        updatePerception(s.value);
+        // updatePerception(s.value);
+        updatePerception(s.innerHTML);
         setTimeout(displayPerceptions, 1000);
-        s.value = ''
+        // s.value = ''
+        s.innerHTML = ''
     }
 
     // function updateData(id){
