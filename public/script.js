@@ -24,7 +24,7 @@
                     <button class="delete" aria-label="delete" onclick="removeData(${id})"></button>
                 </div>
                 <div class="message-body">
-                <div>${txt}</div>
+                <div id= "realText">${txt}</div>
                 <div><small>${d.toLocaleString()}</small></div>
                 </div>
                 </article>
@@ -77,16 +77,16 @@
     }
 
     function updateData(txt){
-        let s = document.getElementById(txt);
+        let s = document.querySelector("#realText");
         // let s = document.getElementById(id).textContent;
         // if (document.getElementById(id) != null) {
         // str = document.getElementById(id).value;
         // }
-        // updatePerception(s.value);
-        updatePerception(s.innerHTML);
+        updatePerception(s.value);
+        // updatePerception(s.innerHTML);
         setTimeout(displayPerceptions, 1000);
-        // s.value = ''
-        s.innerHTML = ''
+        s.value = ''
+        // s.innerHTML = ''
     }
 
     // function updateData(id){
