@@ -1,7 +1,11 @@
-displayPerceptions();
+displayPerceptions() 
 
 function _(id) {
     return document.getElementById(id);
+}
+
+function modifyText() {
+
 }
 
 function displayPerceptions() {
@@ -22,7 +26,7 @@ function displayPerceptions() {
                 <button class="delete" aria-label="delete" onclick="removeData(${id})"></button>
             </div>
             <div class="message-body">
-            <div id= "realText">${txt}</div>
+            <textarea onchange="changeTextArea(this)" id="realText">${txt}</textarea>
             <div><small>${d.toLocaleString()}</small></div>
             </div>
             </article>
@@ -50,10 +54,10 @@ function removePerception(id) {
     console.log(data);
 }
     
-function updatePerception(text) {
+function updatePerception(id,text) {
     let payload = { text: text };
     console.log('script ' + payload.text)
-    let res = axios.put('http://localhost:3000/perceptions/' + payload);
+    let res = axios.put('http://localhost:3000/perceptions/' + id, payload);
     let data = res.data;
     console.log(data);
 }  
@@ -70,20 +74,25 @@ function removeData(id){
     setTimeout(displayPerceptions, 1000);
 }
 
-function updateData(){
-    let s = document.querySelector("#realText");
-    // let s = document.getElementById(id).textContent;
+function updateData(id){
+    // let s = document.querySelector("#realText");
+    let s = document.getElementById("realText");
     // if (document.getElementById(id) != null) {
     // str = document.getElementById(id).value;
     // }
-    updatePerception(s.value);
+    console.log(id,s.innerHTML);
+    updatePerception(id, s.innerHTML);
     // updatePerception(s.innerHTML);
     setTimeout(displayPerceptions, 1000);
     s.value = ''
     // s.innerHTML = ''
 }
 
+function changeTextArea(this){
+    let realText = realText.vaue  
+    
+}
+
 // function updateData(id){
 //     updatePerception(id);
 //     setTimeout(displayPerceptions, 1000);
-// }
