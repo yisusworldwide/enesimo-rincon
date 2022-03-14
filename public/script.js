@@ -77,22 +77,13 @@ function removeData(id){
 function updateData(id){
     // let s = document.querySelector("#realText");
     let s = document.getElementById("realText");
-    // if (document.getElementById(id) != null) {
-    // str = document.getElementById(id).value;
-    // }
     console.log(id,s.innerHTML);
     updatePerception(id, s.innerHTML);
-    // updatePerception(s.innerHTML);
     setTimeout(displayPerceptions, 1000);
     s.value = ''
-    // s.innerHTML = ''
 }
 
 function changeTextArea(this){
     let realText = realText.vaue  
     
 }
-
-// function updateData(id){
-//     updatePerception(id);
-//     setTimeout(displayPerceptions, 1000);
