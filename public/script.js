@@ -4,10 +4,6 @@ function _(id) {
     return document.getElementById(id);
 }
 
-function modifyText() {
-
-}
-
 function displayPerceptions() {
     axios.get('http://localhost:3000/perceptions').then((res) => {
         var rows = res.data
@@ -81,9 +77,4 @@ function updateData(id){
     updatePerception(id, s.innerHTML);
     setTimeout(displayPerceptions, 1000);
     s.value = ''
-}
-
-function changeTextArea(this){
-    let realText = realText.vaue  
-    
 }
