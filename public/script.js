@@ -22,7 +22,7 @@ function displayPerceptions() {
                 <button class="delete" aria-label="delete" onclick="removeData(${id})"></button>
             </div>
             <div class="message-body">
-            <textarea onchange="changeTextArea(this)" id="realText">${txt}</textarea>
+            <textarea onchange="alert('Acabas de cambiar tus percepciones.')" "changeTextArea(this)" id="realText">${txt}</textarea>
             <div><small>${d.toLocaleString()}</small></div>
             </div>
             </article>
