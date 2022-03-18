@@ -58,6 +58,8 @@ function updatePerception(id,text) {
     console.log(data);
 }  
 
+//IMPLEMENT ABOVE CREATED FUNCTIONS 'ADD', 'REMOVE', 'UPDATE'
+
 function postData(id){
     let s = document.getElementById(id);
     addPerception(s.value);
@@ -71,10 +73,17 @@ function removeData(id){
 }
 
 function updateData(id){
-    // let s = document.querySelector("#realText");
     let s = document.getElementById("realText");
-    console.log(id,s.innerHTML);
     updatePerception(id, s.innerHTML);
+    console.log(id,s.innerHTML);
     setTimeout(displayPerceptions, 1000);
     s.value = ''
 }
+
+// const updateTextArea = document.querySelector("textarea");
+// const log = document.getElementById("realText");
+// updateTextArea.addEventListener('change', updateValue);
+// console.log(updateTextArea);
+// function updateValue(e) {
+//   log.textContent = e.target.value;
+// }
