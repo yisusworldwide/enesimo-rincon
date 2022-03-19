@@ -18,14 +18,11 @@ function displayPerceptions() {
             <article class="message">
             <div class="message-header">
                 <p style='color:white;'>Percepción #${id}</p>
-                <button class="update" aria-label="update" onclick="updateData(${id})"></button>
                 <button class="delete" aria-label="delete" onclick="removeData(${id})"></button>
             </div>
             <div class="message-body">
             <textarea onchange="alert('Acabas de cambiar tus percepciones.')" "changeTextArea(this)" id="realText">${txt}</textarea>
-            <button onclick="changeContent()">
-                          Editar Percepción
-            </button>
+            <button onclick="updateData(${id})">Editar Percepción</button>
             <div><small>${d.toLocaleString()}</small></div>
             </div>
             </article>
@@ -82,6 +79,10 @@ function updateData(id){
     setTimeout(displayPerceptions, 1000);
     s.value = ''
 }
+
+// function changeContent() {
+//     document.getElementById('realText').innerHTML = s.value;
+// }
 
 // const updateTextArea = document.querySelector("textarea");
 // const log = document.getElementById("realText");
