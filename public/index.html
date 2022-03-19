@@ -50,19 +50,17 @@
   </section>
   </div>
 
-  <!-- <script>
-    const updateTextArea = document.querySelector("textarea");
-    const log = document.getElementById("realText");
-    updateTextArea.addEventListener('change', updateValue);
-    console.log(updateTextArea);
-    function updateValue(e) {
-    log.textContent = e.target.value;
-    }
-  </script> -->
-
-  <script>var el = document.getElementById("realText");
-    el.addEventListener("click", modifyText, false);
+  <script>
+    function changeContent() {
+            document.getElementById('txt').innerHTML
+                    = "";
+        }
   </script>
+
+
+  <!-- <script>var el = document.getElementById("realText");
+    el.addEventListener("click", modifyText, false);
+  </script> -->
 
   
 </body>

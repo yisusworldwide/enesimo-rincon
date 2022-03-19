@@ -23,6 +23,9 @@ function displayPerceptions() {
             </div>
             <div class="message-body">
             <textarea onchange="alert('Acabas de cambiar tus percepciones.')" "changeTextArea(this)" id="realText">${txt}</textarea>
+            <button onclick="changeContent()">
+                          Editar Percepción
+            </button>
             <div><small>${d.toLocaleString()}</small></div>
             </div>
             </article>
