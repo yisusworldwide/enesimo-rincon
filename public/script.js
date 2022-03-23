@@ -77,7 +77,7 @@ function updateData(id){
     updatePerception(id, s.innerHTML);
     console.log(id,s.innerHTML);
     setTimeout(displayPerceptions, 1000);
-    s.value = ''
+    s.value = 'hola caracola'
 }
 
 // function changeContent() {
