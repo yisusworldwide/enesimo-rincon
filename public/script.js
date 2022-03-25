@@ -73,11 +73,11 @@ function removeData(id){
 }
 
 function updateData(id){
-    let s = document.getElementById("realText");
+    let s = document.getElementById('realText');
     updatePerception(id, s.innerHTML);
     console.log(id,s.innerHTML);
     setTimeout(displayPerceptions, 1000);
-    s.value = 'hola caracola'
+    s.value = ''
 }
 
 // function changeContent() {
