@@ -79,15 +79,3 @@ function updateData(id){
     setTimeout(displayPerceptions, 1000);
     s.value = ''
 }
-
-// function changeContent() {
-//     document.getElementById('realText').innerHTML = s.value;
-// }
-
-// const updateTextArea = document.querySelector("textarea");
-// const log = document.getElementById("realText");
-// updateTextArea.addEventListener('change', updateValue);
-// console.log(updateTextArea);
-// function updateValue(e) {
-//   log.textContent = e.target.value;
-// }
