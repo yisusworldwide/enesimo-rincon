@@ -16,10 +16,12 @@ function displayPerceptions() {
             d.addHours(1)
             _('rs').innerHTML += `
             <article class="message">
+            
             <div class="message-header">
                 <p style='color:white;'>Percepción #${id}</p>
                 <button class="delete" aria-label="delete" onclick="removeData(${id})"></button>
             </div>
+
             <div class="message-body">
             <textarea onchange="alert('Acabas de cambiar tus percepciones.')" "changeTextArea(this)" id="realText">${txt}</textarea>
             <button class="button button is-warning is-light" onclick="updateData(${txt})">Editar Percepción</button>
@@ -38,24 +40,24 @@ Date.prototype.addHours = function(h) {
 
 function addPerception(text) {
     let payload = { text: text };
-    console.log('script ' + payload.text)
+    console.log('screwed ' + payload.text)
     let res = axios.post('http://localhost:3000/perceptions', payload);
     let data = res.data;
-    console.log(data);
+    //console.log(data);
 }
     
 function removePerception(id) {
     let res = axios.delete('http://localhost:3000/perceptions/' + id);
     let data = res.data;
-    console.log(data);
+    //console.log(data);
 }
     
-function updatePerception(id,text) {
+function updatePerception(text) {
     let payload = { text: text };
     console.log('script ' + payload.text)
-    let res = axios.put('http://localhost:3000/perceptions/' + id, payload);
+    let res = axios.put('http://localhost:3000/perceptions/', payload);
     let data = res.data;
-    console.log(data);
+    //console.log(data);
 }  
 
 //IMPLEMENT ABOVE CREATED FUNCTIONS 'ADD', 'REMOVE', 'UPDATE'
