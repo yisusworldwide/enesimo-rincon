@@ -1,8 +1,10 @@
-var express = require('express');
-var app = express();
-var path = require('path');
+//THIS IS THE SERVER SIDE
 
-var fs = require('fs');
+const express = require('express');
+const app = express();
+const path = require('path');
+
+const fs = require('fs');
 const sqlite3 = require('sqlite3');
 const sqlite = require('sqlite');
 const open = require('open');
@@ -22,7 +24,7 @@ app.get('/perceptions', async function(req, res){
     let db = await getDBConnection();
     let perceptions = await db.all("select id, text, created_at, updated_at from perceptions order by created_at desc");
     await db.close();
-    return res.json(perceptions)
+    res.json(perceptions)
 })
 
 //POST API
@@ -101,7 +103,7 @@ app.delete("/perceptions/:id", async function(req, res) {
 })
 
 var port = 3000;
-app.listen(port, function(){
+app.listen(port, () => {
     console.log('server on! http://localhost:' + port);
     open('http://localhost:' + port);
 });
