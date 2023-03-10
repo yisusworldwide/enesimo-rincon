@@ -2,7 +2,7 @@
 
 const express = require('express');
 const app = express();
-const path = require('path');
+var path = require('path');
 
 const fs = require('fs');
 const sqlite3 = require('sqlite3');
