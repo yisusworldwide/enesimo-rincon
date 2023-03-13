@@ -25,8 +25,8 @@ function displayPerceptions() {
             </div>
             
             <div class="message-body">
-            <textarea onchange="alert('Acabas de cambiar tus percepciones.')" "changeTextArea(this)" id="realText">${txt}</textarea>
-            <button class="update" aria-label="update" onclick="updateData(${txt})">Editar Percepción</button>
+            <textarea onchange="alert('Acabas de cambiar tus percepciones.')" "changeTextArea(this)" id="txt">${txt}</textarea>
+            <button id="txt" class="update" aria-label="update" onclick="updateData(${txt})">Editar Percepción</button>
             <div><small>${d.toLocaleString()}</small></div>
             </div>
             </article>
@@ -42,7 +42,7 @@ function addPerception(text) {
     console.log('script ' + payload.text)
     let res = axios.post('http://localhost:3000/perceptions', payload);
     let data = res.data;
-    //console.log(data);
+    console.log(data);
 }
 
 function updatePerception(text) {
@@ -56,7 +56,7 @@ function updatePerception(text) {
 function removePerception(id) {
     let res = axios.delete('http://localhost:3000/perceptions/' + id);
     let data = res.data;
-    //console.log(data);
+    console.log(data);
 }
 
 //IMPLEMENT ABOVE CREATED FUNCTIONS 'ADD', 'REMOVE', 'UPDATE'
@@ -70,7 +70,7 @@ function postData(id){
 
 function updateData(id){
     let s = document.getElementById(id);
-    updatePerception(id);
+    updatePerception(s.value);
     console.log(s.value);
     setTimeout(displayPerceptions, 1000);
     s.value = ''
