@@ -48,7 +48,7 @@ function addPerception(text) {
 function updatePerception(text) {
     let payload = { text: text };
     console.log('script ' + payload.text)
-    let res = axios.put('http://localhost:3000/perceptions/:id', payload);
+    let res = axios.put('http://localhost:3000/perceptions/:id' , payload);
     let data = res.data;
     console.log(data);
 }  
@@ -64,6 +64,7 @@ function removePerception(id) {
 function postData(id){
     let s = document.getElementById(id);
     addPerception(s.value);
+    console.log(s.value);
     setTimeout(displayPerceptions, 1000);
     s.value = ''
 }
