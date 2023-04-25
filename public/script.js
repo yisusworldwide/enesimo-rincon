@@ -23,7 +23,7 @@ function displayPerceptions() {
                 <p style='color:white;'>Percepción #${id}</p>
                 <button class="delete" aria-label="delete" onclick="removeData(${id})"></button>
             </div>
-            <form action="/perceptions/:id" method="POST">
+            <form method="POST" action="/perceptions/:id">
             <div class="message-body">
             <textarea onchange="alert('Acabas de cambiar tus percepciones.')" "changeTextArea(this)" id="txt">${txt}</textarea>
             <button id="txt" class="update" aria-label="update" onclick="updateData(${txt})">Editar Percepción</button>
