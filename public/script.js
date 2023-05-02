@@ -23,9 +23,10 @@ function displayPerceptions() {
                 <p style='color:white;'>Percepción #${id}</p>
                 <button class="delete" aria-label="delete" onclick="removeData(${id})"></button>
             </div>
-            <form action="/perceptions/:id" method="POST">
+
+            <form id="for" action="/perceptions/:id" method="post">
             <div class="message-body">
-            <textarea onchange="alert('Acabas de cambiar tus percepciones.')" "changeTextArea(this)" id="txt">${txt}</textarea>
+            <textarea onchange="changeTextArea(this)" id="txt">${txt}</textarea>
             <button id="txt" class="update" aria-label="update" onclick="updateData(${txt})">Editar Percepción</button>
             <div><small>${d.toLocaleString()}</small></div>
             </div>
@@ -37,6 +38,8 @@ function displayPerceptions() {
         
     })
 }
+
+//"alert('Acabas de cambiar tus percepciones.')" 
 
 function addPerception(text) {
     let payload = { text: text };
