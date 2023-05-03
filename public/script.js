@@ -23,21 +23,27 @@ function displayPerceptions() {
                 <p style='color:white;'>Percepción #${id}</p>
                 <button class="delete" aria-label="delete" onclick="removeData(${id})"></button>
             </div>
-
-            <form id="for" action="/perceptions/:id" method="post">
-            <div class="message-body">
-            <textarea onchange="changeTextArea(this)" id="txt">${txt}</textarea>
-            <button id="txt" class="update" aria-label="update" onclick="updateData(${txt})">Editar Percepción</button>
-            <div><small>${d.toLocaleString()}</small></div>
-            </div>
-            </form>
+                
+            <form action="/perceptions" method="post">
+            <label for="updatedText">${txt}</label>
+            <input type="text" name="updatedText" id="updatedText" value=""
             </article>
+            <button>Submit</button>
+            </form>
             `;
         }
 
         
     })
 }
+
+/* <form id="for" action="/perceptions/:id" method="post">
+<div class="message-body">
+<textarea onchange="changeTextArea(this)" id="txt">${txt}</textarea>
+<button id="txt" class="update" aria-label="update" onclick="updateData(${txt})">Editar Percepción</button>
+<div><small>${d.toLocaleString()}</small></div>
+</div>
+</form> */
 
 //"alert('Acabas de cambiar tus percepciones.')" 
 
@@ -91,3 +97,8 @@ Date.prototype.addHours = function(h) {
     return this;
 }
 
+const button  = document.getElementById(update);
+button.addEventListener('click', function(e){
+    console.log("Data updated!!");
+    updateData(txt);
+})
