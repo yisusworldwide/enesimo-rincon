@@ -23,13 +23,12 @@ function displayPerceptions() {
                 <p style='color:white;'>Percepción #${id}</p>
                 <button class="delete" aria-label="delete" onclick="removeData(${id})"></button>
             </div>
-                
-            <form action="/perceptions" method="post">
-            <label for="updatedText">${txt}</label>
-            <input type="text" name="updatedText" id="updatedText" value=""
-            </article>
-            <button>Submit</button>
-            </form>
+            
+            <div class="message-body">
+            <textarea>${txt}</textarea>
+            <button id="update" class="update" aria-label="update" onclick="updateData(${txt})">Editar Percepción</button>
+            <div><small>${d.toLocaleString()}</small></div>
+            </div>
             `;
         }
 
@@ -46,6 +45,13 @@ function displayPerceptions() {
 </form> */
 
 //"alert('Acabas de cambiar tus percepciones.')" 
+
+/* <form action="/perceptions" method="post">
+<label for="updatedText">${txt}</label>
+<input type="text" name="updatedText" id="updatedText" value=""
+</article>
+<button>Submit</button>
+</form> */
 
 function addPerception(text) {
     let payload = { text: text };
@@ -100,5 +106,5 @@ Date.prototype.addHours = function(h) {
 const button  = document.getElementById(update);
 button.addEventListener('click', function(e){
     console.log("Data updated!!");
-    updateData(txt);
+    updateData(id);
 })
