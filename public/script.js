@@ -36,6 +36,8 @@ function displayPerceptions() {
     })
 }
 
+
+
 /* <form id="for" action="/perceptions/:id" method="post">
 <div class="message-body">
 <textarea onchange="changeTextArea(this)" id="txt">${txt}</textarea>
@@ -86,7 +88,7 @@ function postData(id){
 }
 
 function updateData(id){
-    let s = document.getElementById(id);
+    let s = document.getElementById(update);
     updatePerception(s.value);
     console.log(s.value);
     setTimeout(displayPerceptions, 1000);
@@ -103,8 +105,8 @@ Date.prototype.addHours = function(h) {
     return this;
 }
 
-const button  = document.getElementById(update);
-button.addEventListener('click', function(e){
-    console.log("Data updated!!");
-    updateData(id);
-})
+// const button  = document.getElementById(update);
+// button.addEventListener('click', function(e){
+//     console.log("Data updated!!");
+//     updateData(id);
+// })
