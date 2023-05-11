@@ -30,6 +30,11 @@ function displayPerceptions() {
             <div><small>${d.toLocaleString()}</small></div>
             </div>
             `;
+            const button  = document.getElementById(update);
+            button.addEventListener('click', function(e){
+            console.log("Data updated!!");
+            updateData(id);
+            })
         }
 
         
@@ -54,6 +59,7 @@ function displayPerceptions() {
 </article>
 <button>Submit</button>
 </form> */
+
 
 function addPerception(text) {
     let payload = { text: text };
@@ -105,8 +111,3 @@ Date.prototype.addHours = function(h) {
     return this;
 }
 
-// const button  = document.getElementById(update);
-// button.addEventListener('click', function(e){
-//     console.log("Data updated!!");
-//     updateData(id);
-// })
