@@ -26,7 +26,7 @@ function displayPerceptions() {
             
             <div class="message-body">
             <textarea>${txt}</textarea>
-            <button id="update" class="update" aria-label="update" onclick="removeData(${id})">Editar Percepción</button>
+            <button id="update" class="update" aria-label="update" onclick="updateData(${id})">Editar Percepción</button>
             <div><small>${d.toLocaleString()}</small></div>
             </div>
             `;
@@ -65,10 +65,10 @@ function addPerception(text) {
 }
 
 function updatePerception(text) {
-    let payload = { text: text };
+    let payload = { text: text }; //HTTP request body
     console.log('script ' + payload.text)
-    let res = axios.put('http://localhost:3000/perceptions/:id' , payload); //might be something wrong in this line
-    let data = res.data;
+    let res = axios.put('http://localhost:3000/perceptions/' + id , { "text": payload }); //using string concatenation
+    let data = res.data.json;
     console.log(data);
 }  
     
@@ -88,18 +88,24 @@ function postData(id){
     s.value = ''
 }
 
-function updateData(id){
-    let s = document.getElementById(id);
-    updatePerception(s.value);
-    console.log(s.value);
-    setTimeout(displayPerceptions, 1000);
-    s.value = ''
-}
+// function updateData(id){
+//     let s = document.getElementById(id).value;
+//     if (s != null) {
+//         s = element.value;
+//     }
+//     else {
+//         s = null;
+//     }
+//     updatePerception(s.value);
+//     console.log(s.value);
+//     setTimeout(displayPerceptions, 1000);
+//     s.value = ''
+// }
     
-function removeData(id){
-    removePerception(id);
-    setTimeout(displayPerceptions, 1000);
-}
+// function removeData(id){
+//     removePerception(id);
+//     setTimeout(displayPerceptions, 1000);
+// }
 
 Date.prototype.addHours = function(h) {
     this.setTime(this.getTime() + (h*60*60*1000));
