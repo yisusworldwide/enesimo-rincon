@@ -25,9 +25,9 @@ function displayPerceptions() {
             </div>
             
             <div class="message-body">
-            <textarea>${txt}</textarea>
-            <button id="update" class="update" aria-label="update" onclick="updateData(${id})">Editar Percepción</button>
-            <div><small>${d.toLocaleString()}</small></div>
+                <textarea>${txt}</textarea>
+                <button id="update" class="update" aria-label="update" onclick="updateData(${txt})">Edit</button>
+                <div><small>${d.toLocaleString()}</small></div>
             </div>
             `;
             
@@ -88,24 +88,19 @@ function postData(id){
     s.value = ''
 }
 
-// function updateData(id){
-//     let s = document.getElementById(id).value;
-//     if (s != null) {
-//         s = element.value;
-//     }
-//     else {
-//         s = null;
-//     }
-//     updatePerception(s.value);
-//     console.log(s.value);
-//     setTimeout(displayPerceptions, 1000);
-//     s.value = ''
-// }
+function updateData(id){
+    let s = document.getElementById(id);
+    console.log(id); //added to check if gets the "id"
+    updatePerception(s.value);
+    console.log(s.value);
+    setTimeout(displayPerceptions, 1000);
+    s.value = ''
+}
     
-// function removeData(id){
-//     removePerception(id);
-//     setTimeout(displayPerceptions, 1000);
-// }
+function removeData(id){
+    removePerception(id);
+    setTimeout(displayPerceptions, 1000);
+}
 
 Date.prototype.addHours = function(h) {
     this.setTime(this.getTime() + (h*60*60*1000));
