@@ -24,7 +24,7 @@ app.get('/perceptions', async function(req, res){
     let db = await getDBConnection();
     let perceptions = await db.all("select id, text, created_at, updated_at from perceptions order by created_at desc");
     await db.close();
-    res.json(perceptions)
+    res.json(perceptions);
 })
 
 //POST API
@@ -58,7 +58,7 @@ app.post("/perceptions", async function(req, res) {
 app.put("/perceptions/:id", async function(req, res) {
     let db = await getDBConnection();
     var errors=[]
-    console.log(req.body)
+    console.log(req.body);
     var data = {
         text: req.body
     }
