@@ -25,8 +25,8 @@ function displayPerceptions() {
             </div>
             
             <div class="message-body">
-                <textarea id="update" rows="3">${txt}</textarea>
-                <button id="update" class="update" aria-label="update" onclick="updateData(${txt})">Edit</button>
+                <textarea id="percepcion" rows="3">${txt}</textarea>
+                <button id="update" class="update" aria-label="update" onclick="updateData(${id})">Edit</button>
                 <div><small>${d.toLocaleString()}</small></div>
             </div>
             `;
@@ -67,7 +67,7 @@ function addPerception(text) {
 function updatePerception(text) {
     let payload = { text: text }; //HTTP request body
     console.log('script ' + payload.text);
-    let res = axios.put('http://localhost:3000/perceptions/' + id , { "text": payload }); //using string concatenation
+    let res = axios.put('http://localhost:3000/perceptions/' + id , payload); //using string concatenation
     let data = res.data.json;
     console.log(data);
 }  
@@ -90,9 +90,9 @@ function postData(id){
 
 function updateData(id){
     let s = document.getElementById(id);
-    console.log(id); //added to check if gets the "id"
-    updatePerception(s.value);
-    console.log(s.value);
+    console.log(percepcion); //added to check if gets the "id"
+    updatePerception(s.innerHTML);
+    console.log(s.innerHTML);
     setTimeout(displayPerceptions, 1000);
     s.value = ''
 }
