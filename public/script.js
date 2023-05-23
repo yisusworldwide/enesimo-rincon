@@ -25,8 +25,8 @@ function displayPerceptions() {
             </div>
             
             <div class="message-body">
-                <textarea id="percepcion" rows="3">${txt}</textarea>
-                <button id="update" class="update" aria-label="update" onclick="updateData(${id})">Edit</button>
+                <textarea id="update" rows="3">${txt}</textarea>
+                <button id="update" class="update" aria-label="update" onclick="updateData(${txt.text})">Edit</button>
                 <div><small>${d.toLocaleString()}</small></div>
             </div>
             `;
@@ -78,7 +78,7 @@ function removePerception(id) {
     console.log(data);
 }
 
-//IMPLEMENT ABOVE CREATED FUNCTIONS 'ADD', 'REMOVE', 'UPDATE'
+//IMPLEMENT ABOVE CREATED FUNCTIONS 'ADD', 'UPDATE', 'REMOVE'
 
 function postData(id){
     let s = document.getElementById(id);
@@ -88,9 +88,9 @@ function postData(id){
     s.value = ''
 }
 
-function updateData(id){
-    let s = document.getElementById(id);
-    console.log(percepcion); //added to check if gets the "id"
+function updateData(update){
+    let s = document.getElementById(update);
+    console.log(update); //added to check if gets the "id"
     updatePerception(s.innerHTML);
     console.log(s.innerHTML);
     setTimeout(displayPerceptions, 1000);
