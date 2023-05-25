@@ -25,8 +25,8 @@ function displayPerceptions() {
             </div>
             
             <div class="message-body">
-                <textarea id="update" rows="3">${txt}</textarea>
-                <button id="update" class="update" aria-label="update" onclick="updateData(${txt.text})">Edit</button>
+                <textarea id="txt" rows="3">${txt}</textarea>
+                <button id="txt" class="update" aria-label="update" onclick="updateData(${txt})">Edit</button>
                 <div><small>${d.toLocaleString()}</small></div>
             </div>
             `;
@@ -56,6 +56,7 @@ function displayPerceptions() {
 <button>Submit</button>
 </form> */
 
+
 function addPerception(text) {
     let payload = { text: text };
     console.log('script ' + payload.text);
@@ -64,10 +65,10 @@ function addPerception(text) {
     console.log(data);
 }
 
-function updatePerception(text) {
+async function updatePerception(text) {
     let payload = { text: text }; //HTTP request body
     console.log('script ' + payload.text);
-    let res = axios.put('http://localhost:3000/perceptions/' + id , payload); //using string concatenation
+    let res = await  axios.put('http://localhost:3000/perceptions/' + id , payload); //using string concatenation
     let data = res.data.json;
     console.log(data);
 }  
@@ -88,13 +89,13 @@ function postData(id){
     s.value = ''
 }
 
-function updateData(update){
-    let s = document.getElementById(update);
-    console.log(update); //added to check if gets the "id"
+function updateData(txt){
+    let s = document.getElementById(txt);
+    console.log(s); //added to check if gets the "id"
     updatePerception(s.innerHTML);
     console.log(s.innerHTML);
     setTimeout(displayPerceptions, 1000);
-    s.value = ''
+    s.innerHTML = ''
 }
     
 function removeData(id){
