@@ -20,13 +20,13 @@ function displayPerceptions() {
             <article class="message">
             
             <div class="message-header">
-                <p style='color:orange;'>Percepción #${id}</p>
+                <p style='color:white;'>Percepción #${id}</p>
                 <button id="delete" class="delete" aria-label="delete" onclick="removeData(${id})"></button>
             </div>
             
             <div class="message-body">
-                <textarea id="txt" rows="3">${txt}</textarea>
-                <button id="txt" class="update" aria-label="update" onclick="updateData(${txt})">Edit</button>
+                <textarea id="${txt}" rows="3">${txt}</textarea>
+                <button id="${txt}" class="update" aria-label="update" onclick="updateData(${txt})">Edit</button>
                 <div><small>${d.toLocaleString()}</small></div>
             </div>
             `;
