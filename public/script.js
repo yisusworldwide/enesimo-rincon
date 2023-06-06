@@ -18,17 +18,19 @@ function displayPerceptions() {
             d.addHours(1)
             _('rs').innerHTML += `
             <article class="message">
-            
             <div class="message-header">
-                <p style='color:white;'>Percepción #${id}</p>
+                <p style="color:white">Percepción #${id}</p>
                 <button id="delete" class="delete" aria-label="delete" onclick="removeData(${id})"></button>
             </div>
-            
             <div class="message-body">
-                <textarea id="${txt}" rows="3">${txt}</textarea>
-                <button id="${txt}" class="update" aria-label="update" onclick="updateData(${txt})">Edit</button>
+                <label class="form-label" for="txt"></label> 
+                <textarea class="form-control" type="text" id="txt" rows="3" name="txt">${txt}</textarea>
+            </div>
+            <div>
+                <button id="update" class="btn btn-info" aria-label="update" onclick="updateData(${txt})">Edit</button>
                 <div><small>${d.toLocaleString()}</small></div>
             </div>
+            </article>
             `;
             
         }
@@ -90,7 +92,7 @@ function postData(id){
 }
 
 function updateData(txt){
-    let s = document.getElementById(txt);
+    let s = document.getElementById(txt).innerHTML;
     console.log(s); //added to check if gets the "id"
     updatePerception(s.innerHTML);
     console.log(s.innerHTML);
