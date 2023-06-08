@@ -24,7 +24,7 @@ function displayPerceptions() {
             </div>
             <div class="message-body">
                 <label class="form-label" for="txt"></label> 
-                <textarea class="form-control" type="text" id="txt" rows="3" name="txt">${txt}</textarea>
+                <textarea class="form-control" type="text" id="id" rows="3" name="txt">${txt}</textarea>
             </div>
             <div>
                 <button id="update" class="btn btn-info" aria-label="update" onclick="updateData(${txt})">Edit</button>
@@ -91,13 +91,13 @@ function postData(id){
     s.value = ''
 }
 
-function updateData(txt){
-    let s = document.getElementById(txt).innerHTML;
+function updateData(id){
+    let s = document.getElementById(id);
     console.log(s); //added to check if gets the "id"
-    updatePerception(s.innerHTML);
-    console.log(s.innerHTML);
+    updatePerception(s.value);
+    console.log(s.value);
     setTimeout(displayPerceptions, 1000);
-    s.innerHTML = ''
+    // s.value = updatePerception
 }
     
 function removeData(id){
