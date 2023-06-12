@@ -25,10 +25,11 @@ function displayPerceptions() {
             <div class="message-body">
                 <label class="form-label" for="txt"></label> 
                 <textarea class="form-control" type="text" id="txt" rows="3" name="txt">${txt}</textarea>
+                <button class="btn btn-info" aria-label="update" onclick="updateData(${txt})">Edit</button>
+                <div><small>${d.toLocaleString()}</small></div>
             </div>
             <div>
-                <button class="btn btn-info" id="btn" aria-label="update" onclick="updateData('post')">Edit</button>
-                <div><small>${d.toLocaleString()}</small></div>
+                
             </div>
             </article>
             `;
@@ -71,7 +72,7 @@ async function updatePerception(text, id) {
     let payload = { text: text }; //HTTP request body
     console.log('script ' + payload.text);
     let res = await  axios.put('http://localhost:3000/perceptions/' + id , payload); //using string concatenation
-    let data = res.data.json;
+    let data = res.data;
     console.log(data);
 }  
     
@@ -97,7 +98,7 @@ function updateData(id){
     updatePerception(s.value);
     console.log(s.value);
     setTimeout(displayPerceptions, 1000);
-    s.value = updatePerception
+    s.value = s.value;
 }
     
 function removeData(id){
