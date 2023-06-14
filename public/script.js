@@ -18,19 +18,19 @@ function displayPerceptions() {
             d.addHours(1)
             _('rs').innerHTML += `
             <article class="message">
-            <div class="message-header">
-                <p style="color:white">Percepción #${id}</p>
-                <button id="delete" class="delete" aria-label="delete" onclick="removeData(${id})"></button>
-            </div>
-            <div class="message-body">
-                <label class="form-label" for="txt"></label> 
-                <textarea class="form-control" type="text" id="txt" rows="3" name="txt">${txt}</textarea>
-                <button class="btn btn-info" aria-label="update" onclick="updateData(${txt})">Edit</button>
-                <div><small>${d.toLocaleString()}</small></div>
-            </div>
-            <div>
-                
-            </div>
+                <div class="message-header">
+                    <p style="color:white">Percepción #${id}</p>
+                    <button id="delete" class="delete" aria-label="delete" onclick="removeData(${id})"></button>
+                </div>
+                <div class="message-body">
+                    <label class="form-label" for="txt"></label> 
+                    <textarea class="form-control" type="text" id="update" rows="3" name="update">${txt}</textarea>
+                    <button class="btn btn-info" aria-label="update" onclick="updateData("update")">Edit</button>
+                    <div><small>${d.toLocaleString()}</small></div>
+                </div>
+                <div>
+                    
+                </div>
             </article>
             `;
             
@@ -68,10 +68,10 @@ function addPerception(text) {
     console.log(data);
 }
 
-async function updatePerception(text, id) {
+    function updatePerception(text, id) {
     let payload = { text: text }; //HTTP request body
     console.log('script ' + payload.text);
-    let res = await  axios.put('http://localhost:3000/perceptions/' + id , payload); //using string concatenation
+    let res = axios.put('http://localhost:3000/perceptions/' + id , payload); //using string concatenation
     let data = res.data;
     console.log(data);
 }  
@@ -98,7 +98,7 @@ function updateData(id){
     updatePerception(s.value);
     console.log(s.value);
     setTimeout(displayPerceptions, 1000);
-    s.value = s.value;
+    s.value = ''
 }
     
 function removeData(id){
