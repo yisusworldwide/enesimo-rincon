@@ -13,42 +13,73 @@
   </head>
 
   <body>
-    <div class="bg-img">
-      <section class="section">
-        <div class="container">
-          <div class="columns">
-            <div class="column has-text-centered offset-one-quarter">
-              <div class="card">
-                    <header class="card-header has-text-centered">
-                      <p>
-                        <h1 class="card-header-title has-text-centered title is-3 has-text-link-dark">
-                          Hello World
-                        </h1>
-                      </p>
-                    </header>
-                      <div class="card-image">
-                        <figure class="image is-3by1 pb-3">
-                          <img class="img-fluid" src="https://turismo.caceres.es/sites/default/files/styles/simplecrop__16_9_/public/72303.jpg">
-                        </figure>
-                      </div>
-                      <section class="container mt-5">
-                        <p class="subtitle is-inline mt-3">Write down here:</p>
-                        <div class="card-content">
-                          <div class="wrapper text-center">
-                            <textarea id="post" rows="3" placeholder="Typing..."></textarea>
-                              <div class="text-l">
-                                <button class="button button is-link is-light" onclick="postData('post')">Post</button>
-                              </div>
-                          </div>
-                          <div id="rs" class="wrapper"></div>
-                        </div>
-                      </section>
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-3by1">
+          <img src="https://turismo.caceres.es/sites/default/files/styles/simplecrop__16_9_/public/72303.jpg" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-4">El Enésimo Rincón</p>
+            <p class="subtitle is-6">By One</p>
+          </div>
+        </div>
+    
+        <div class="card-content">
+          <div class="wrapper text-center">
+            <textarea id="post" rows="4" placeholder="Typing..."></textarea>
+              <div class="text-l">
+                <button class="button button is-link is-light" onclick="postData('post')">Post</button>
               </div>
+          </div>
+          <div id="rs" class="wrapper"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <!-- <div class="bg-img">
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column has-text-centered offset-one-quarter">
+            <div class="card">
+                  <header class="card-header has-text-centered">
+                    <p>
+                      <h1 class="card-header-title has-text-centered title is-3 has-text-link-dark">
+                        Hello World
+                      </h1>
+                    </p>
+                  </header>
+                    <div class="card-image">
+                      <figure class="image is-3by1 pb-3">
+                        <img class="img-fluid" src="https://turismo.caceres.es/sites/default/files/styles/simplecrop__16_9_/public/72303.jpg">
+                      </figure>
+                    </div>
+                    <section class="container mt-5">
+                      <p class="subtitle is-inline mt-3">Write down here:</p>
+                      <div class="card-content">
+                        <div class="wrapper text-center">
+                          <textarea id="post" rows="4" placeholder="Typing..."></textarea>
+                            <div class="text-l">
+                              <button class="button button is-link is-light" onclick="postData('post')">Post</button>
+                            </div>
+                        </div>
+                        <div id="rs" class="wrapper"></div>
+                      </div>
+                    </section>
             </div>
           </div>
         </div>
-      </section>
-    </div>
-  
-  </body>
+      </div>
+    </section>
+  </div> -->
+
 </html>
