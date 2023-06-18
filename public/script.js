@@ -23,13 +23,9 @@ function displayPerceptions() {
                     <button id="delete" class="delete" aria-label="delete" onclick="removeData(${id})"></button>
                 </div>
                 <div class="message-body">
-                    <label class="form-label" for="txt"></label> 
-                    <textarea class="form-control" type="text" id="update" rows="3" name="update">${txt}</textarea>
-                    <button class="btn btn-info" aria-label="update" onclick="updateData("update")">Edit</button>
+                    <textarea class="form-control" type="text" id="text" rows="3" name="update">${txt}</textarea>
+                    <button class="btn btn-info" aria-label="update" onclick="updateData(${txt})">Edit</button>
                     <div><small>${d.toLocaleString()}</small></div>
-                </div>
-                <div>
-                    
                 </div>
             </article>
             `;
@@ -92,8 +88,8 @@ function postData(id){
     s.value = ''
 }
 
-function updateData(id){
-    let s = document.getElementById(id);
+function updateData(text){
+    let s = document.getElementById(text);
     console.log(s.value); //added to check if gets the "id"
     updatePerception(s.value);
     console.log(s.value);
