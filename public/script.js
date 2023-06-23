@@ -85,7 +85,7 @@ function postData(id){
     addPerception(s.value);
     console.log(s.value);
     setTimeout(displayPerceptions, 1000);
-    s.value = ''
+    //s.value = ''
 }
 
 function updateData(id){
