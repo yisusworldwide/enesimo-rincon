@@ -62,8 +62,8 @@ app.put("/perceptions/:id", async function(req, res) {
     var data = {
         text: req.body
     }
-    var params =[req.params.id]
     var sql ='UPDATE perceptions SET text = ? WHERE id = ?'
+    var params =[req.params.id]
     db.run(sql, params, function (err, results) {
         if (err){
             res.status(400).json({"error": err.message})
