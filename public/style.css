@@ -6,6 +6,7 @@
     --heading-color: #292922;
 }
 
+/* we are referencing a data attribute called data-theme with a value "dark" */
 [data-theme="dark"] {
     --primary-color: #9A97F3;
     --secondary-color: #818cab;
