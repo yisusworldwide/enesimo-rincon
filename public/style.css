@@ -1,33 +1,71 @@
-body,
+:root {
+    --primary-color: #302AE6;
+    --secondary-color: #536390;
+    --font-color: #424242;
+    --bg-color: #fff;
+    --heading-color: #292922;
+}
+
+[data-theme="dark"] {
+    --primary-color: #9A97F3;
+    --secondary-color: #818cab;
+    --font-color: #e1e1ff;
+    --bg-color: #161625;
+    --heading-color: #818cab;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+
+    /*other styles*/
+    
+}
+
+h1 {
+    color: var(--secondary-color);
+
+    /*other styles*/
+    
+}
+
+a {
+    color: var(--primary-color);
+
+    /*other styles*/
+    
+}
+
+/* body,
 h3,
 h1 {
     text-align: center;
     margin: 0px 0px 0px;
     padding: 1;
-}
+} */
 
-.bg-img { 
+/* .bg-img { 
     background-image: url("https://www.saccosystem.com/public/imgCat3/big/140-525402379-Pollame.jpg") ;
     background-position: center center;
     background-repeat:  no-repeat;
     background-attachment: fixed;
     background-size:  cover;
     background-color: #999;
-}
+} */
 
-h2 {
+/* h2 {
     text-align: center;
     margin: 0;
     padding: 0;
-}
+} */
 
-header {
+/* header {
     background-color: blue;
     color: #ccc;
     padding: .5rem;
     margin-bottom: 10px;
     text-align: center;
-}
+} */
 
 .wrapper {
     max-width: auto;
