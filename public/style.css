@@ -1,3 +1,4 @@
+/*Dark/Light Mode Switch CSS code chunk*/
 :root {
     --primary-color: #302AE6;
     --secondary-color: #536390;
@@ -37,6 +38,7 @@ a {
     
 }
 
+/*CSS to style the checkbox of the html like a toggle switch*/
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
@@ -94,6 +96,7 @@ a {
   .slider.round:before {
     border-radius: 50%;
   }  
+/*End of css toggle switch styling*/
 
 /* body,
 h3,
