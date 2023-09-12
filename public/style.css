@@ -44,6 +44,14 @@ a {
     
 }
 
+.post-meta {
+  font-size: 1rem;
+  font-style: italic;
+  display: block;
+  margin-bottom: 4vh;
+  color: var(--secondary-color);
+}
+
 nav {
   display: flex;
   justify-content: flex-end;
