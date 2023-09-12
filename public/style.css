@@ -19,23 +19,35 @@
 body {
     background-color: var(--bg-color);
     color: var(--font-color);
-
-    /*other styles*/
+    max-width: 90%;
+    margin: 0 auto;
+    font-size: calc(1rem + 0.25vh);
     
 }
 
 h1 {
     color: var(--secondary-color);
-
-    /*other styles*/
+    font-family: "Sansita One", serif;
+    font-size: 2rem;
+    margin-bottom: 1vh;
     
 }
 
 a {
     color: var(--primary-color);
-
-    /*other styles*/
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    font-weight: bold;
+    &:hover, &:focus {
+        border-bottom: 3px solid currentColor;
+    }
     
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 0;
 }
 
 /*CSS to style the checkbox of the html like a toggle switch*/
@@ -48,6 +60,7 @@ a {
       font-size: 1rem;
     }
   }
+  
   .theme-switch {
     display: inline-block;
     height: 34px;
