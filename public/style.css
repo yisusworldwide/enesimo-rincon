@@ -1,156 +1,33 @@
-/*Dark/Light Mode Switch CSS code chunk*/
-@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,700|Sansita+One);
-
-:root {
-    --primary-color: #302AE6;
-    --secondary-color: #536390;
-    --font-color: #424242;
-    --bg-color: #fff;
-    --heading-color: #292922;
-}
-
-/* we are referencing a data attribute called data-theme with a value "dark" */
-[data-theme="dark"] {
-    --primary-color: #9A97F3;
-    --secondary-color: #818cab;
-    --font-color: #e1e1ff;
-    --bg-color: #161625;
-    --heading-color: #818cab;
-}
-
-body {
-    background-color: var(--bg-color);
-    color: var(--font-color);
-    max-width: 90%;
-    margin: 0 auto;
-    font-size: calc(1rem + 0.25vh);
-    
-}
-
-h1 {
-    color: var(--secondary-color);
-    font-family: "Sansita One", serif;
-    font-size: 2rem;
-    margin-bottom: 1vh;
-    
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    border-bottom: 3px solid transparent;
-    font-weight: bold;
-    &:hover, &:focus {
-        border-bottom: 3px solid currentColor;
-    }
-    
-}
-
-.post-meta {
-  font-size: 1rem;
-  font-style: italic;
-  display: block;
-  margin-bottom: 4vh;
-  color: var(--secondary-color);
-}
-
-nav {
-  display: flex;
-  justify-content: flex-end;
-  padding: 20px 0;
-}
-
-/*CSS to style the checkbox of the html like a toggle switch*/
-.theme-switch-wrapper {
-    display: flex;
-    align-items: center;
-  
-    em {
-      margin-left: 10px;
-      font-size: 1rem;
-    }
-  }
-  
-  .theme-switch {
-    display: inline-block;
-    height: 34px;
-    position: relative;
-    width: 60px;
-  }
-  
-  .theme-switch input {
-    display:none;
-  }
-  
-  .slider {
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    background-color: #fff;
-    bottom: 4px;
-    content: "";
-    height: 26px;
-    left: 4px;
-    position: absolute;
-    transition: .4s;
-    width: 26px;
-  }
-  
-  input:checked + .slider {
-    background-color: #66bb6a;
-  }
-  
-  input:checked + .slider:before {
-    transform: translateX(26px);
-  }
-  
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }  
-/*End of css toggle switch styling*/
-
-/* body,
+body,
 h3,
 h1 {
     text-align: center;
     margin: 0px 0px 0px;
     padding: 1;
-} */
+} 
 
-/* .bg-img { 
+ .bg-img { 
     background-image: url("https://www.saccosystem.com/public/imgCat3/big/140-525402379-Pollame.jpg") ;
     background-position: center center;
     background-repeat:  no-repeat;
     background-attachment: fixed;
     background-size:  cover;
     background-color: #999;
-} */
+} 
 
-/* h2 {
+ h2 {
     text-align: center;
     margin: 0;
     padding: 0;
-} */
+} 
 
-/* header {
+ header {
     background-color: blue;
     color: #ccc;
     padding: .5rem;
     margin-bottom: 10px;
     text-align: center;
-} */
+} 
 
 .wrapper {
   max-width: auto;
