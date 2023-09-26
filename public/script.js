@@ -118,6 +118,16 @@ Date.prototype.addHours = function(h) {
     return this;
 }
 
+$( ".inner-switch" ).on("click", function() {
+    if( $( "body" ).hasClass( "dark" )) {
+      $( "body" ).removeClass( "dark" );
+      $( ".inner-switch" ).text( "OFF" );
+    } else {
+      $( "body" ).addClass( "dark" );
+      $( ".inner-switch" ).text( "ON" );
+    }
+  });
+
 // const button  = document.getElementById(update);
 // button.addEventListener('click', function(e){
 // console.log("Data updated!!");
