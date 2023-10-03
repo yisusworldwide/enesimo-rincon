@@ -6,16 +6,23 @@ body {
   max-width: 50rem;
   margin: 0 auto;
   padding: 0 0.9375rem;
+  background-image: url("https://www.saccosystem.com/public/imgCat3/big/140-525402379-Pollame.jpg") ;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  /* background-size: contain, cover; */
+  /* background-size: 120% 120%; */
+  background-color: #999;
 }
 
-.bg-img { 
+/* .bg-img { 
   background-image: url("https://www.saccosystem.com/public/imgCat3/big/140-525402379-Pollame.jpg") ;
   background-position: center center;
   background-repeat:  no-repeat;
   background-attachment: fixed;
   background-size:  cover;
   background-color: #999;
-}
+} */
 
 .wrapper {
   max-width: auto;
