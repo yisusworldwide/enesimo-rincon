@@ -3,15 +3,14 @@ body {
   font-size: 1.125rem;
   display: flex;
   flex-direction: column;
-  max-width: 50rem;
+  /* max width for background image window fitting */
+  max-width: 100rem;
   margin: 0 auto;
   padding: 0 0.9375rem;
   background-image: url("https://www.saccosystem.com/public/imgCat3/big/140-525402379-Pollame.jpg") ;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  /* background-size: contain, cover; */
-  /* background-size: 120% 120%; */
   background-color: #999;
 }
 
