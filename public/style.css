@@ -47,7 +47,7 @@ img {
 }
 
 .switch {
-  align-self: flex-end;
+  text-align: right;
   margin: 0.9375rem;
 }
 
