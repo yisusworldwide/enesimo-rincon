@@ -3,6 +3,7 @@ body {
   font-size: 1.125rem;
   display: flex;
   flex-direction: column;
+  text-align: center;
   /* max width for background image window fitting */
   max-width: 100rem;
   margin: 0 auto;
@@ -13,7 +14,6 @@ body {
   background-size: cover;
   background-color: #999;
 }
-
 
 .wrapper {
   max-width: auto;
