@@ -15,6 +15,13 @@ body {
   background-color: #999;
 }
 
+h1 {
+  font-family: "Sansita One", serif;
+  font-size: 2rem;
+  margin-bottom: 1vh;
+  
+}
+
 .wrapper {
   max-width: auto;
   /* max-width: 500px; */
