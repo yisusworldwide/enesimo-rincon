@@ -19,7 +19,14 @@ h1 {
   font-family: "Sansita One", serif;
   font-size: 2rem;
   margin-bottom: 1vh;
-  
+}
+
+header {
+  /* background-color: blue; */
+  color: #ccc;
+  padding: .5rem;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .wrapper {
