@@ -41,6 +41,10 @@ header {
   margin: .3rem 0;
 }
 
+.post-button {
+  margin-bottom: 10px;
+}
+
 textarea {
   width: 100%;
 }
