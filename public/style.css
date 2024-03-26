@@ -47,6 +47,9 @@ header {
 
 textarea {
   width: 100%;
+  resize: none;
+  field-sizing: content;
+  max-height: 200px;
 }
 
 small {
