@@ -3,13 +3,9 @@
 Web thoughts-board project to save your perceptions for the future.
 
 > [!IMPORTANT]
-
 > Get started: make sure you have all the dependencies from package.json installed by running the following command:
-
 > `npm install`
-
 > To start the project you need to install NodeJS, go to the project's folder and run the following command:
-
 > `node app.js`
 
 ## Technical infomation
