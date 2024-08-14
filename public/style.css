@@ -19,6 +19,9 @@ h1 {
   font-family: "Sansita One", serif;
   font-size: 2rem;
   margin-bottom: 1vh;
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: green;
 }
 
 header {
