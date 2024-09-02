@@ -96,7 +96,9 @@ function postData(id){
     addPerception(s.value);
     console.log(s.value);
     setTimeout(displayPerceptions, 1000);
-    //s.value = ''
+    //we need "s.value = ''" to clear the previous text in the texarea
+    console.log(s.value);
+    s.value = ''
 }
 
 function updateData(id){

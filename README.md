@@ -13,7 +13,7 @@ Web thoughts-board project to save your perceptions for the future.
 This project is based in a client-server app. 
 
 > [!NOTE]
-> The backend is written in NodeJS and it's formed by an API with the endpoints included in [this postman file](postman).
+> The backend is written in NodeJS and it's formed by an API which endpoints are included in [this postman file](postman).
 > Also, there is SQLite3 database which includes the required tables to store the perceptions.
 
 ### Frontend

@@ -9,7 +9,13 @@ body {
   margin: 0 auto;
   padding: 0 0.9375rem;
   background-image: url("https://www.saccosystem.com/public/imgCat3/big/140-525402379-Pollame.jpg") ;
-  background-repeat: no-repeat;
+  /* here below is intended to create intelligent shadow on chickens' background */
+  /* background: inherit;
+  filter: 
+    blur(40px)
+    saturate(400%);
+  z-index: -1; */
+  background-repeat: no-repeat; 
   background-attachment: fixed;
   background-size: cover;
   background-color: #999;
