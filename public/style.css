@@ -107,3 +107,17 @@ p {
 small {
   color: #ccc;
 }
+
+.spinner {
+  width: 36px;
+  height: 36px;
+
+  border: 5px solid #fffc;
+  border-top-color: #09f;
+
+  animation: spin 1s infinite;
+
+  @keyframes spin {
+    to { tranform: rotate(360deg) }
+  }
+}
