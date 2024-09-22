@@ -55,28 +55,53 @@ app.post("/perceptions", async function(req, res) {
 //For our API, we're going to configure PUT to be able to handle single-user editing, 
 //so we're going to use the :id route parameter this time.
 
-app.put("/perceptions/:id", async function(req, res) {
-    let db = await getDBConnection();
-    var errors=[]
-    console.log(req.body);
-    var data = {
-        text: req.body
-    }
-    var sql ='UPDATE perceptions SET text = ? WHERE id = ?'
-    var params =[req.params.id]
-    db.run(sql, params, function (err, results) {
-        if (err){
-            res.status(400).json({"error": err.message})
+app.put('/perceptions/:perceptionId', async (req, res) => {
+    try {
+        const perceptionId = parseInt(req.params.perceptionId);
+        const updatedText = req.body.text; // Assuming the request body contains the updated text
+
+        // Get a database connection
+        const db = await getDBConnection();
+
+        // Check if the perception exists
+        const existingPerception = await db.get('SELECT * FROM perceptions WHERE id = ?', perceptionId);
+        if (!existingPerception) {
+            res.status(404).json({ error: `Perception ${perceptionId} not found` });
             return;
-        } 
-        res.json({
-            "message": "success",
-            "data": data,
-            "id" : this.lastID
-        })
-    });
-    res.send(req.body);    // echo the result back
-})
+        }
+
+        // Update the perception text
+        await db.run('UPDATE perceptions SET text = ? WHERE id = ?', updatedText, perceptionId);
+        await db.close();
+
+        res.status(200).json({ message: `Perception ${perceptionId} updated successfully` });
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+});
+
+// app.put("/perceptions/:id", async function(req, res) {
+//     let db = await getDBConnection();
+//     var errors=[]
+//     console.log(req.body);
+//     var data = {
+//         text: req.body
+//     }
+//     var sql ='UPDATE perceptions SET text = ? WHERE id = ?'
+//     var params =[req.params.id]
+//     db.run(sql, params, function (err, results) {
+//         if (err){
+//             res.status(400).json({"error": err.message})
+//             return;
+//         } 
+//         res.json({
+//             "message": "success",
+//             "data": data,
+//             "id" : this.lastID
+//         })
+//     });
+//     res.send(req.body);    // echo the result back
+// })
 
 //DELETE API
 app.delete("/perceptions/:id", async function(req, res) {
