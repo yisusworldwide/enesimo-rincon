@@ -23,7 +23,8 @@ body {
 
 h1 {
   font-family: "Sansita One", serif;
-  font-size: 2rem;
+  /* 'clamp function' for a responsive text => font min value, preferable flex value, max value */
+  font-size: clamp(1rem, 2vw + 1rem, 3rem);
   margin-bottom: 1vh;
   color: transparent;
   -webkit-text-stroke-width: 1px;
