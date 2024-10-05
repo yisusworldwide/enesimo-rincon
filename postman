@@ -96,7 +96,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/perceptions/:perceptionId",
+					"raw": "http://localhost:3000/perceptions/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -105,6 +105,13 @@
 					"path": [
 						"perceptions",
 						":id"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "Hey ya!", /* we maybe have to change 'value' for something else */
+							"disabled": true
+						}
 					]
 				}
 			},
