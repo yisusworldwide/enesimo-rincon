@@ -64,6 +64,7 @@ textarea {
 small {
   font-style: italic;
 }
+
 article {
   display: flex;
   flex-direction: column;
@@ -97,6 +98,17 @@ img {
   background-color: #222;
   color: #e6e6e6;
   border-color: #e6e6e6;
+
+  &.loader {
+    border: 3px dotted #b2d100;
+    transform: rotate(30deg);
+    border-style: solid solid dotted dotted;
+}
+
+  &.loader::after {
+    border: 3px dotted #bb7d3a;
+    border-style: solid solid dotted;
+  }
 }
 
 p {
