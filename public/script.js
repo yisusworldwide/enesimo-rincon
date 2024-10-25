@@ -24,7 +24,7 @@ function displayPerceptions() {
                 </div>
                 <div class="message-body">
                     <textarea class="form-control" type="text" id="txt" rows="3" name="update">${txt}</textarea>
-                    <button class="btn btn-info" aria-label="update" onclick="updateData('txt')">Edit</button>
+                    <button class="btn btn-info" aria-label="update" onclick="updateData('txt')">Editar</button>
                     <div><small>${d.toLocaleString()}</small></div>
                 </div>
             </article>

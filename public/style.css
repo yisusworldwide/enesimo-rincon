@@ -78,6 +78,7 @@ img {
 
 .switch {
   text-align: right;
+  font-weight: bold;
   margin: 0.9375rem;
 }
 
