@@ -128,7 +128,14 @@ $( ".inner-switch" ).on("click", function() {
       $( "body" ).addClass( "dark" );
       $( ".inner-switch" ).text( "ON" );
     }
-  });
+});
+
+document.getElementById('scrollToBottom').addEventListener('click', function() {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth'
+    });
+});  
 
 // const button  = document.getElementById(update);
 // button.addEventListener('click', function(e){

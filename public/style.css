@@ -171,3 +171,16 @@ small {
     transform: rotate(-360deg);
   }
 } 
+
+#scrollToBottom {
+  /* position: fixed; */
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
