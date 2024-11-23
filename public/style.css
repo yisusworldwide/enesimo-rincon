@@ -10,6 +10,9 @@ body {
   padding: 0 0.9375rem;
   background-image: url("https://www.saccosystem.com/public/imgCat3/big/140-525402379-Pollame.jpg") ;
   /* here below is intended to create intelligent shadow on chickens' background */
+  /* also filter: drop-shadow(
+            0 0 10px rgba(0,0,0, .8)
+          )
   /* background: inherit;
   filter: 
     blur(40px)
@@ -173,7 +176,6 @@ small {
 } 
 
 #scrollToBottom {
-  /* position: fixed; */
   top: 20px;
   left: 20px;
   padding: 10px 20px;
