@@ -130,6 +130,7 @@ $( ".inner-switch" ).on("click", function() {
     }
 });
 
+//get to understand why does this work
 document.getElementById('scrollToBottom').addEventListener('click', function() {
     window.scrollTo({
       top: document.body.scrollHeight,

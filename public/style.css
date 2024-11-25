@@ -179,8 +179,8 @@ small {
   top: 20px;
   left: 20px;
   padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
+  /* background-color: #007BFF; */
+  color: rgb(74, 74, 74);
   border: none;
   border-radius: 5px;
   cursor: pointer;
