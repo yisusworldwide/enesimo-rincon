@@ -19,6 +19,13 @@
         <div class="navbar-menu">
           <div class="navbar-start">
             <a class="navbar-item">
+              <svg class="arrow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none">
+                <style>@keyframes slide-2{to{transform:translateY(2px)}}</style>
+                <path fill="#0A0A30" fill-rule="evenodd" 
+                d="M17.358 12.632a.714.714 0 01-.092 1.006l-4.276 3.564a.712.712 0 01-.933 0L7.78 13.638a.714.714 0 11.915-1.097l3.078 2.565V7.375a.75.75 0 011.5 0v7.73l3.079-2.564a.714.714 0 011.006.091z" 
+                clip-rule="evenodd" 
+                style="animation:slide-2 1s infinite alternate both cubic-bezier(1,-.01,0,.98)"/>
+              </svg>
               <a class="button" id="scrollToBottom">Scroll Down</a>
             </a>
           </div>
@@ -50,6 +57,37 @@
               <textarea id="post" rows="4" placeholder="Escribe algo..."></textarea>
                 <div class="text-l">
                   <button class="post-button button is-link is-light" onclick="postData('post')">Publicar</button>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="none" viewBox="0 0 24 24">
+                    <style>
+                      .rotate-right {
+                        animation: rotate-right 1s cubic-bezier(1, -0.01, 0.13, 1.15) infinite alternate-reverse both;
+                        transform-origin: top center;
+                      }
+                  
+                      @keyframes rotate-right {
+                        0% {
+                          transform: rotate(0);
+                        }
+                  
+                        25% {
+                          transform: rotate(10deg);
+                        }
+                  
+                        50 {
+                          transform: rotate(0deg);
+                        }
+                  
+                        100% {
+                          transform: rotate(-10deg);
+                        }
+                      }
+                    </style>
+                    <g class="rotate-right">
+                      <path stroke="#00d1b2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.5 7.307h5" />
+                      <path stroke="#3850b7" stroke-width="1.5"
+                        d="M9 5.5A1.5 1.5 0 0110.5 4h3A1.5 1.5 0 0115 5.5v11.3a1.5 1.5 0 01-.54 1.152l-1.5 1.249a1.5 1.5 0 01-1.92 0l-1.5-1.249A1.5 1.5 0 019 16.8V5.5z" />
+                    </g>
+                  </svg>
                 </div>
             </div>
             <div id="rs" class="wrapper"></div>
@@ -66,6 +104,13 @@
         <div class="navbar-end">
           <a class="navbar-item" href="#">
             <strong>Home</strong>
+            <svg class="arrow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+              <style>@keyframes slide-8{to{transform:translateY(2px)}}</style>
+              <path fill="#0A0A30" fill-rule="evenodd" 
+              d="M17.358 11.368a.714.714 0 00-.092-1.006L12.99 6.798a.71.71 0 00-.778-.102.708.708 0 00-.155.102L7.78 10.362a.714.714 0 10.915 1.097l3.078-2.565v7.731a.75.75 0 001.5 0v-7.73l3.079 2.564a.714.714 0 001.006-.091z" 
+              clip-rule="evenodd" 
+              style="animation:slide-8 1s infinite alternate both cubic-bezier(1,-.01,0,.98)"/>
+            </svg>
           </a>
         </div>
       </footer>
