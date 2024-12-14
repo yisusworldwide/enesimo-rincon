@@ -81,14 +81,14 @@ img {
 
 .switch {
   text-align: right;
-  font-weight: bold;
+  font-weight: bolder;
   margin: 0.9375rem;
 }
 
 .inner-switch {
   display: inline-block;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: bolder;
   border: 1px solid #555;
   border-radius: 1.25rem;
   width: 3.125rem;
