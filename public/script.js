@@ -46,13 +46,6 @@ function displayPerceptions() {
 
 //"alert('Acabas de cambiar tus percepciones.')" 
 
-/* <form action="/perceptions" method="post">
-<label for="updatedText">${txt}</label>
-<input type="text" name="updatedText" id="updatedText" value=""
-</article>
-<button>Submit</button>
-</form> */
-
 
 function addPerception(text) {
     let payload = { text: text };
