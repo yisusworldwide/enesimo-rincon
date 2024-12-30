@@ -8,6 +8,7 @@ body {
   max-width: 100rem;
   margin: 0 auto;
   padding: 0 0.9375rem;
+  /* change background image since previous swapped out from server */
   background-image: url("https://www.saccosystem.com/public/imgCat3/big/140-525402379-Pollame.jpg") ;
   /* here below is intended to create intelligent shadow on chickens' background */
   /* also filter: drop-shadow(
@@ -22,6 +23,8 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-color: #999;
+  scrollbar-color: #ffd970 rgb(0, 132, 255);
+  scrollbar-width: auto; 
 }
 
 h1 {
