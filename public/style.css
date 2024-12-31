@@ -9,7 +9,7 @@ body {
   margin: 0 auto;
   padding: 0 0.9375rem;
   /* change background image since previous swapped out from server */
-  background-image: url("https://www.saccosystem.com/public/imgCat3/big/140-525402379-Pollame.jpg") ;
+  background-image: url("./images/galloGallinas.jpg");
   /* here below is intended to create intelligent shadow on chickens' background */
   /* also filter: drop-shadow(
             0 0 10px rgba(0,0,0, .8)
